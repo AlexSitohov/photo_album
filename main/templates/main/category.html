@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<a class="nav-link" href="{% url 'upload_photo' category.id %}">Добавить фото</a>
+
+{% for photo in photos %}
+
+<div class="photo_div">
+    {{photo}}
+     <img src="{{ photo.photo.url }}" style="width:200px;">
+    <a href="{% url 'update_photo' photo.id category.id %}">Изменить описание</a>
+    <a href="{% url 'delete_photo' photo.id category.id %}">Удалить фото</a>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

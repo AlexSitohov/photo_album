@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<p>
+  Вы точно хотите удалить {{category}} ?
+  <a href="{% url 'delete_cat' category.id %}">Удалить</a>
+</p>
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+{% for category in categories %}
+
+<div class="photo_div">
+    <a href="{% url 'category' category.id %}">{{category}}</a> <a href="{% url 'update_category' category.id %}">Изменить</a> | <a href="{% url 'delete_category_check' category.id %}">Удалить</a>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

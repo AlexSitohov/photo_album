@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+<form class="form_create" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p>
+        <label>Описание фото:</label>
+        <input type="text" name="photo_description" value="{{photo.photo_description}}"/>
+    </p>
+
+
+    <button class="btn btn-primary" type="submit">Изменить</button>
+</form>
+<img src="{{ photo.photo.url }}" style="width:200px;">
+
+
+{% endblock %}
